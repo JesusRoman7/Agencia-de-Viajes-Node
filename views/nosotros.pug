@@ -1,0 +1,37 @@
+//- <h1> Hola</h1> con html normal
+//- si ponemos un elemento y luego un espacio lo toma como html, pero si le ponemos el elemento y un = lo toma como una variable
+//- h1 Hola
+//- p desde pug
+//- p= textoViajes
+extends ./layout/index
+
+block contenido
+    main.container.mt-5 
+        .row 
+            .col-md-5
+                img(src="img/nosotros.jpg", alt="imagen-nosotros", class="img-fluid")
+            .col-md-7
+                h1= pagina
+                blockquote Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque eos nisi possimus consectetur porro beatae fugit dolorem velit. Dolores magni, porro adipisci hic officiis pariatur dicta vel quasi reiciendis eveniet.
+
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quod neque eligendi iste rerum officiis nam deserunt, repellat ipsum soluta dignissimos quasi quae, hic ab esse ducimus dolores exercitationem impedit.
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis esse impedit quam nobis sunt reiciendis cupiditate iusto commodi. Accusantium labore totam obcaecati itaque corrupti autem iure facilis non voluptates quae.
+
+    .listado-iconos
+        .container.mt-5.py-5.text-center 
+            .row 
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", alt="icono-seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum delectus officiis debitis ut nisi beatae accusamus placeat, tenetur magni sed nemo esse omnis ex quas. Distinctio hic asperiores dolore impedit.
+
+                .col-md-4
+                    img(src="img/icono_destinos.svg", alt="icono-destinos", class="img-fluid mb-4")
+                    h2.mb-4 Mejores Destinos
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum delectus officiis debitis ut nisi beatae accusamus placeat, tenetur magni sed nemo esse omnis ex quas. Distinctio hic asperiores dolore impedit.
+                    
+                .col-md-4
+                    img(src="img/icono_precios.svg", alt="icono-precios", class="img-fluid mb-4")
+                    h2.mb-4 Los Mejores Precios
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum delectus officiis debitis ut nisi beatae accusamus placeat, tenetur magni sed nemo esse omnis ex quas. Distinctio hic asperiores dolore impedit.

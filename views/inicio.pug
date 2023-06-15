@@ -1,0 +1,65 @@
+//-Primero le decimos que archivo queremos utilizar, le decimos que el index
+extends ./layout/index 
+
+block slider
+    .slider 
+        h1 Rio de Janeiro 
+        em aventura
+
+
+//-Le ponemos el mismo nombre para decirle que esto sera nuestro bloque
+//-el nombre en el index e inicio tienen que ser los mismos bloques, en este caso el nombr es contenido
+block contenido
+    main.container.mt-5 
+        h2.text-center.mb-5 Sobre Nosotros 
+        .row.mb-5
+            .col-md-6 
+                p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia quasi recusandae, delectus officia voluptate quaerat ipsam suscipit. Eos nobis consequuntur vitae aperiam quas, laudantium atque laborum, numquam minus neque assumenda? 
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quae repellat cupiditate ex laudantium pariatur dolore est eligendi, a iste, officiis non incidunt, repudiandae necessitatibus provident exercitationem odio dolorum sint?
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", alt="imagen-nosotros" class="img-fluid")
+
+        .row.proximos-viajes 
+                each viaje in viajes 
+                    .col-md-6.col-lg-4.mb-4
+                        .card
+                            img.card-img-top(src=`img/destinos_${viaje.imagen}.jpg`)
+                            .card-body
+                                h2= viaje.titulo
+                                p 
+                                    svg.icon.icon-tabler.icon-tabler-calendar-stats(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                                        path(d='M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4')
+                                        path(d='M18 14v4h4')
+                                        path(d='M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0')
+                                        path(d='M15 3v4')
+                                        path(d='M7 3v4')
+                                        path(d='M3 11h16')
+                                    | #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+                                
+                                p 
+                                    svg.icon.icon-tabler.icon-tabler-user-check(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                                        path(d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0')
+                                        path(d='M6 21v-2a4 4 0 0 1 4 -4h4')
+                                        path(d='M15 19l2 2l4 -4')
+
+                                    | #{viaje.disponibles} - Disponibles
+
+                                p= viaje.descripcion.substr(0, 100) + '...'
+
+                                a(href=`viaje/${viaje.slug}`, class="btn btn-success btn-block") Mas Informacion
+    
+    .descuento 
+        .container 
+            .row
+                .col-md-6 
+                    .contenido 
+                        h3 5% de Descuento 
+                        p.titulo Viaje a Canada 
+                        p.fecha 15 de Julio 2023 - 29 de Julio 2023
+                        p.precio $2,500 USD
+
+    .container
+        h2.mt-5.text-center Testimoniales
+        include ./layout/bloque_testimoniales

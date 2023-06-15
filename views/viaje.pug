@@ -1,0 +1,43 @@
+//- <h1> Hola</h1> con html normal
+//- si ponemos un elemento y luego un espacio lo toma como html, pero si le ponemos el elemento y un = lo toma como una variable
+//- h1 Hola
+//- p desde pug
+//- p= textoViajes
+extends ./layout/index
+
+block contenido
+    main.container.mt-5 
+        .row 
+            .col-md-5
+                img(src=`/img/destinos_${resultado.imagen}.jpg`, alt="imagen-viaje", class="img-fluid")
+            .col-md-7
+                h1= resultado.titulo
+                p 
+                    svg.icon.icon-tabler.icon-tabler-calendar-stats(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4')
+                        path(d='M18 14v4h4')
+                        path(d='M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0')
+                        path(d='M15 3v4')
+                        path(d='M7 3v4')
+                        path(d='M3 11h16')
+                    | #{resultado.fecha_ida} - #{resultado.fecha_vuelta}
+                
+                p 
+                    svg.icon.icon-tabler.icon-tabler-coin(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0')
+                        path(d='M14.8 9a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1')
+                        path(d='M12 7v10')
+                    | #{resultado.precio} Dolares
+                
+                p 
+                    svg.icon.icon-tabler.icon-tabler-user-check(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0')
+                        path(d='M6 21v-2a4 4 0 0 1 4 -4h4')
+                        path(d='M15 19l2 2l4 -4')
+
+                    | #{resultado.disponibles} - Disponibles
+
+                p= resultado.descripcion.substr(0, 100) + '...'
