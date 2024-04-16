@@ -2,6 +2,7 @@ import Sequelize from "sequelize";
 import db from "../config/db.js";
 
 export const Viaje = db.define('viajes', {
+    //Pondremos cada una de las columnas
     titulo: {
         type: Sequelize.STRING
     },
