@@ -1,6 +1,7 @@
 import Sequelize from "sequelize";
 import db from "../config/db.js";
 
+//Nota: el primer parametro sera el nombre de la tabla, tiene que ir especificado en plural
 export const Viaje = db.define('viajes', {
     //Pondremos cada una de las columnas
     titulo: {
