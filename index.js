@@ -36,14 +36,14 @@ app.set('view engine', 'pug');
 
 //Creando el Middlware para Obtener el año actual
 app.use((req, res, next)=> {
-// res.locals.unaVariable = 'Una Nueva Variable';
-const year = new Date();
+    // res.locals.unaVariable = 'Una Nueva Variable';
+    const year = new Date();
 
-res.locals.actualYear = year.getFullYear();
-res.locals.nombreSitio = 'Agencia de Viajes';
+    res.locals.actualYear = year.getFullYear();
+    res.locals.nombreSitio = 'Agencia de Viajes';
 
-console.log(res.locals);
-next();
+    console.log(res.locals);
+    next();
 })
 
 //Agregar body parser para leer los datos del formulario

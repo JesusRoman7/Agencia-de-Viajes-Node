@@ -6,15 +6,15 @@ const guardarTestimonial = async (req, res) => {
 
     const errores = []; //hacemos el arreglo para que nos agregue los errores o si estan bien y asi poder iterar
 
-    if(nombre.trim() === ''){
+    if(nombre === ''){
         errores.push({mensaje : 'El nombre esta vacio'})
     }
 
-    if(correo.trim() === ''){
+    if(correo === ''){
         errores.push({mensaje : 'El correo esta vacio'})
     }
 
-    if(mensaje.trim() === ''){
+    if(mensaje === ''){
         errores.push({mensaje : 'El mensaje esta vacio'})
     }
     
