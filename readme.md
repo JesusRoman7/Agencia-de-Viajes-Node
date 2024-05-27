@@ -35,8 +35,17 @@ app.use(express.urlencoded({extended: true}))<br>
 <img src="./public//img/TestimonialsSubmited.PNG">
 
 ### Responsive Mobile First
-<img src="./public//img/MobileFirst2.PNG">
-<img src="./public//img/MobileFirst3.PNG">
-<img src="./public//img/MobileFirst4.PNG">
+<p align="center">
+    <img src="./public//img/MobileFirst2.PNG">
+</p>
+
+<p align="center">
+    <img src="./public//img/MobileFirst3.PNG">
+</p>
+
+<p align="center">
+    <img src="./public//img/MobileFirst4.PNG">
+</p>
+
 
 
